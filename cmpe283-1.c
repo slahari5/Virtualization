@@ -73,7 +73,82 @@ struct capability_info procprimary[22] =
 
 };
 
+/*
+ProcBased controls secondary
+*/
+struct capability_info procsecondry[27] =
+{
+	{0, "Virtualize APIC accesses"},
+	{1, "Enable EPT"},
+	{2, "Descriptor-table exiting"},
+	{3, "Enable RDTSCP"},
+	{4, "Virtualize x2APIC mode"},
+	{5, "Enable VPID"},
+	{6, "WBINVD exiting"},
+	{7, "Unrestricted guest"},
+	{8, "APIC-register virtualization"},
+	{9, "Virtual-interrupt delivery"},
+	{10, "PAUSE-loop exitin"},
+	{11, "RDRAND exiting"},
+	{12, "Enable INVPCID"},
+	{13, "Enable VM functions"},
+	{14, "VMCS shadowin"},
+	{15, "Enable ENCLS exiting"},
+	{16, "RDSEED exiting"},
+	{17, "Enable PML"},
+	{18, "EPT-violation #VE"},
+	{19, "Conceal VMX from PT"},
+	{20, "Enable XSAVES/XRSTORS"},
+	{22, "Mode-based execute control for EPT"},
+	{23, "Sub-page write permissions for EPT"},
+	{24, "Intel PT uses guest physical addresses"},
+	{25, "Use TSC scaling"},
+	{26, "Enable user wait and pause"},
+	{28, "Enable ENCLV exiting"}
+};
 
+/*
+exit controls
+*/
+struct capability_info exitsvm[14] =
+{
+	{2, "Save debug controls"},
+	{9, "Host address-space size"},
+	{12, "Load IA32_PERF_GLOBAL_CTRL"},
+	{15, "Acknowledge interrupt on exit"},
+	{18, "Save IA32_PAT"},
+	{19, "Load IA32_PAT"},
+	{20, "Save IA32_EFER"},
+	{21, "Load IA32_EFER"},
+	{22, "Save VMX-preemption timer value"},
+	{23, "Clear IA32_BNDCFGS"},
+	{24, "Conceal VMX from PT"},
+	{25, "Clear IA32_RTIT_CT"},
+	{28, "Load CET state"},
+	{29, "Load PKRS"}
+
+};
+
+/*
+vm entry controls
+*/
+
+struct capability_info vmentry[12] =
+{
+	{2, "Load debug controls"},
+	{9, "IA-32e mode guest"},
+	{10, "Entry to SMM"},
+	{11, "Deactivate dual-monitor treatment"},
+	{13, "Load IA32_PERF_GLOBAL_CTRL"},
+	{14, "Load IA32_PAT"},
+	{15, "Load IA32_EFER"},
+	{16, "Load IA32_BNDCFGS"},
+	{17, "Conceal VMX from PT"},
+	{18, "Load IA32_RTIT_CTL"},
+	{20, "Load CET state"},
+	{22, "Load PKRS"}
+
+};
 /*
  * report_capability
  *

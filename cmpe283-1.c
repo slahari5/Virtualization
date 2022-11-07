@@ -16,7 +16,6 @@
 #define IA32_VMX_PROCBASED_CTLS2	0x48B
 #define IA32_VMX_EXIT_CTLS		0x483
 #define IA32_VMX_ENTRY_CTLS		0x484
-#define IA32_VMX_PROCBASED_CTLS3	0x492
 
 /*
  * struct caapability_info
@@ -44,7 +43,8 @@ struct capability_info pinbased[5] =
 };
 
 /*
-Proc-Based controls Primary
+Proc-Based controls primary
+See SDM Volume 3, section 24.6.2
 */
 struct capability_info procprimary[22] =
 {
@@ -75,6 +75,7 @@ struct capability_info procprimary[22] =
 
 /*
 ProcBased controls secondary
+See SDM Volume 3, section 24.6.2
 */
 struct capability_info procsecondry[27] =
 {
@@ -109,6 +110,7 @@ struct capability_info procsecondry[27] =
 
 /*
 exit controls
+See SDM Volume 3, section 24.7.1
 */
 struct capability_info exitsvm[14] =
 {
@@ -131,6 +133,7 @@ struct capability_info exitsvm[14] =
 
 /*
 vm entry controls
+See SDM Volume 3, section 24.8.1
 */
 
 struct capability_info vmentry[12] =

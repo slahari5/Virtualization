@@ -16,3 +16,5 @@ Steps:
 12. Insert kernel module into the VM by running "sudo insmod cmpe283-1.ko" (should be a root user or permission required)
 13. To view the output, use the “dmesg” command.
 14. Commit the changes and push them to git repository.
+
+<img width="621" alt="Procbased_Primary" src="Assignment-1/Pin_based_and_Proc_Primary.png">

@@ -18,3 +18,6 @@ Steps:
 14. Commit the changes and push them to git repository.
 
 <img width="621" alt="Procbased_Primary" src="Assignment-1/Pin_based_and_Proc_Primary.png">
+<img width="621" alt="Procbased_Secondary" src="Assignment-1/Proc_Secondary.png">
+<img width="621" alt="Entry_Controls" src="Assignment-1/Entry_Controls.png">
+<img width="621" alt="Exit_Controls" src="Assignment-1/Exit_Controls.png">

@@ -17,3 +17,11 @@ Steps:
 12. Insert kernel module into the VM by running "sudo insmod cmpe283-1.ko" (should be a root user or permission required)
 13. To view the output, use the “dmesg” command.
 14. Commit the changes, push them to git repository and stop the VM.
+
+<img width="638" alt="entry" src="https://user-images.githubusercontent.com/99698941/203728963-7e34af99-233a-4be0-8a2c-6780b908e61e.png">
+
+<img width="633" alt="Exit_Controls" src="https://user-images.githubusercontent.com/99698941/203728977-a53841ff-e666-4724-bf4c-08f7357cea7e.png">
+
+<img width="662" alt="Pin_based_and_Proc_Primary" src="https://user-images.githubusercontent.com/99698941/203728987-414c21e6-8be6-4274-8d2d-a52e09589371.png">
+
+<img width="678" alt="Proc_Secondary" src="https://user-images.githubusercontent.com/99698941/203728991-2becfae1-0355-421f-89fe-9daa34258a11.png">

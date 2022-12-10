@@ -1,28 +1,34 @@
-#include <stdio.h>
-                #include <sys/types.h>
+printf("\n----- Leaf Node CPUID(0x4FFFFFFC)-----\n\n");
+        eax = 0x4FFFFFFC;
+        __cpuid(&eax, &ebx, &ecx, &edx);
+        printf("CPUID(0x4FFFFFFC), All Type Total Exit Counter = %u \n", eax);
+        printf("EAX = %u  EBX = %u ECX = %u EDX = %u \n", eax, ebx, ecx, edx);
 
 
-                static inline void
-                __cpuid(unsigned int *eax, unsigned int *ebx, unsigned int *ecx,
-                unsigned int *edx)
-                {
-                    asm volatile("cpuid"
-                    : "=a" (*eax),"=b" (*ebx),"=c" (*ecx),"=d" (*edx)
-                    : "0" (*eax), "1" (*ebx), "2" (*ecx), "3" (*edx));
-                }
+        printf("\n----- Leaf Node CPUID(0x4FFFFFFD)-----\n\n");
+        eax = 0x4FFFFFFD;
+        __cpuid(&eax, &ebx, &ecx, &edx);
+        cycle_time = (unsigned long long) ebx << 32 | ecx;
+        printf("CPUID(0x4FFFFFFD), All Type Total Exit Cycles = %llu \n", cycle_time);
+        printf("EAX = %u  EBX = %u ECX = %u EDX = %u \n", eax, ebx, ecx, edx);
 
-                int
-                main(int argc, char **argv)
-                {
-                    unsigned int eax, ebx, ecx, edx;
-                    unsigned long long cycle_time;
+        printf("\n----- Leaf Node CPUID(0x4FFFFFFE)-----\n\n");
+        for(i = 0; i < 75; i++) {
+            eax = 0x4FFFFFFE;
+            ecx = i;
+            ecx_copy = ecx;
+            __cpuid(&eax, &ebx, &ecx, &edx);
+            printf("CPUID(0x4FFFFFFE), Type %u Total Exit Counter = %u \n", ecx_copy, eax);
+            printf("EAX = %u  EBX = %u ECX = %u EDX = %u \n", eax, ebx, ecx, edx);
+        }
 
-                    eax = 0x4FFFFFFC;
-                    __cpuid(&eax, &ebx, &ecx, &edx);
-                    printf("CPUID(0x4FFFFFFC), Total exit counter = %u \n", eax);
-
-                    eax = 0x4FFFFFFD;
-                    __cpuid(&eax, &ebx, &ecx, &edx);
-                    cycle_time = (unsigned long long) ebx << 32 | ecx;
-                    printf("CPUID(0x4FFFFFFD), Total exit cycles = %llu \n", cycle_time);
-                }
+        printf("\n----- Leaf Node CPUID(0x4FFFFFFF)-----\n\n");
+        for(i = 0; i < 75; i++) {
+            eax = 0x4FFFFFFF;
+            ecx = i;
+            ecx_copy = ecx;
+            __cpuid(&eax, &ebx, &ecx, &edx);
+                cycle_time = (unsigned long long) ebx << 32 | ecx;
+            printf("CPUID(0x4FFFFFFF), Type %u Total Exit Cycles = %llu \n", ecx_copy, cycle_time);
+            printf("EAX = %u  EBX = %u ECX = %u EDX = %u \n", eax, ebx, ecx, edx);
+        }
